@@ -1,3 +1,4 @@
+import NavigationBar from "@/components/navbar";
 import Link from "next/link";
 import React from "react";
 
@@ -29,13 +30,15 @@ export default async function Products() {
 
     return (
         <>
+            <NavigationBar />
+
             <main>Halaman Produk</main>
 
             <div className="flex flex-col">
                 {productsData.map((items) => {
                     return (
-                        <Link href={`/products/${items.id}`} key={items.id} 
-                        className="text-lg hover:text-blue-500">{items.title} </Link>
+                        <Link href={`/products/${items.id}`} key={items.id}
+                            className="text-lg hover:text-blue-500">{items.title} </Link>
                     )
                 })}
             </div>
