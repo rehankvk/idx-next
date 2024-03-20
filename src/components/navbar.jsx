@@ -4,7 +4,7 @@ export default function NavigationBar() {
   return (
     <>
       <nav
-  class="block w-full max-w-screen-xl px-6 py-3 mx-auto text-black bg-white border shadow-md rounded-xl border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200">
+  class="block w-full max-w-screen-xl px-6 py-3 mx-auto text-black bg-white border shadow-md border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200">
   <div class="flex items-center justify-between text-blue-gray-900">
     <Link href="/"
       class="mr-4 block cursor-pointer py-1.5 text-base font-semibold leading-relaxed tracking-normal text-inherit antialiased">
