@@ -1,12 +1,13 @@
+"use client"
+
 import React from "react";
 import NavigationBar from "@/components/navbar";
-
 
 export default function Home() {
   return (
     <>
-      <NavigationBar />
-      <main>Hello World</main>
+      <NavigationBar/>
+      <main className="py-4">Hello World</main>
     </>
   )
 }
