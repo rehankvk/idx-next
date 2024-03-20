@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/input";
 import { Label } from "@/components/label";
 import { useRouter } from "next/navigation"
+import Link from "next/link";
 
 export default function Login() {
 
@@ -69,6 +70,7 @@ export default function Login() {
               />
             </div>
           </form>
+          <p>Don't have an account? <Link href={'/auth/register'} className="hover:text-blue-500">Register</Link> </p>
         </CardContent>
         <CardFooter>
           <Button className="w-full" type="submit" onClick={postLogin}>

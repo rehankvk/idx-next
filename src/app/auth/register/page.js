@@ -87,6 +87,7 @@ export default function Register() {
               />
             </div>
           </form>
+          <p>Have an account? <Link href={'/auth/login'} className="hover:text-blue-500">Login</Link> </p>
         </CardContent>
         <CardFooter>
           <Button className="w-full" type="submit" onClick={postRegist}>Register</Button>
