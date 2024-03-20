@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React,{ useState } from "react";
 import { Button } from "@/components/button";
 import {
   Card,
@@ -12,15 +12,33 @@ import {
 } from "@/components/card";
 import { Input } from "@/components/input"
 import { Label } from "@/components/label"
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select"
 
 export default function Register() {
+  
+  const [user, setUser] = useState({
+    username:"",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (event) => {
+    let value = event.target.value;
+    let name = event.target.name;
+ 
+    setUser((prevalue) => {
+      return {
+        ...prevalue,   // Spread Operator               
+        [name]: value
+      }
+    })
+  };
+
+  const postRegist = () => {
+    // console.log(user);
+    localStorage.setItem('email', JSON.stringify(user.email))
+    router.push('/products')
+  };
+
   return (
     <>
       <Card className="w-[350px] bg-white">
@@ -31,19 +49,47 @@ export default function Register() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>          
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" type="text" placeholder="Input Your Name" />
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="Input Your Email" />
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" placeholder="Input Your Password" />
+          <form className="flex flex-col space-y-4">
+            <div className="space-y-3 flex flex-col">
+              <Label htmlFor="name" className="text-left">Name</Label>
+              <Input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Input Your Name"
+                onChange={handleChange}
+                value={user.username}
+                required
+              />
             </div>
-        </form>
+            <div className="space-y-3 flex flex-col">
+              <Label htmlFor="email" className="text-left">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Input Your Email"
+                onChange={handleChange}
+                value={user.email}
+                required
+              />
+            </div>
+            <div className="space-y-3 flex flex-col">
+              <Label htmlFor="password" className="text-left">Password</Label>
+              <Input
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Input Your Password"
+                onChange={handleChange}
+                value={user.password}
+                required
+              />
+            </div>
+          </form>
         </CardContent>
         <CardFooter>
-          <Button className="w-full">Register</Button>
+          <Button className="w-full" type="submit" onClick={postRegist}>Register</Button>
         </CardFooter>
       </Card>
     </>

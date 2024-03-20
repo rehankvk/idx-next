@@ -29,8 +29,9 @@ export default function Login() {
   };
 
   const postLogin = () => {
-    console.log(user);
-    router.push('/products')
+    // console.log(user);
+    localStorage.setItem('email', JSON.stringify(user.email))
+    router.push('/')
   };
 
 
@@ -42,9 +43,9 @@ export default function Login() {
           <CardDescription>Enter your details to login.</CardDescription>
         </CardHeader>
         <CardContent>
-          <form className="flex flex-col space-y-8">
-            <div className="pt-2 flex flex-col">
-              <Label htmlFor="email">Email</Label>
+          <form className="flex flex-col space-y-4">
+            <div className="space-y-3 flex flex-col">
+              <Label htmlFor="email" className="text-left">Email</Label>
               <Input
                 id="email"
                 type="email"
@@ -52,10 +53,11 @@ export default function Login() {
                 placeholder="Input Your Email"
                 onChange={handleChange}
                 value={user.email}
+                required
               />
             </div>
-            <div className="pt-2 flex flex-col">
-              <Label htmlFor="password">Password</Label>
+            <div className="space-y-3 flex flex-col">
+              <Label htmlFor="password" className="text-left">Password</Label>
               <Input
                 id="password"
                 type="password"
@@ -63,6 +65,7 @@ export default function Login() {
                 placeholder="Input Your Password"
                 onChange={handleChange}
                 value={user.password}
+                required
               />
             </div>
           </form>

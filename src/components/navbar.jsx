@@ -18,7 +18,7 @@ export default function NavigationBar() {
           </Link>
         </li>
         <li class="block p-1 text-sm antialiased font-medium leading-normal text-blue-gray-900">
-          <Link href="/" class="flex items-center transition-colors hover:text-blue-500">
+          <Link href="/dashboard" class="flex items-center transition-colors hover:text-blue-500">
             Account
           </Link>
         </li>
