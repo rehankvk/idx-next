@@ -53,11 +53,11 @@ export default function Register() {
         <CardContent>
           <form className="flex flex-col space-y-4">
             <div className="space-y-3 flex flex-col">
-              <Label htmlFor="name" className="text-left">Name</Label>
+              <Label htmlFor="username" className="text-left">Name</Label>
               <Input
-                id="name"
+                id="username"
                 type="text"
-                name="name"
+                name="username"
                 placeholder="Input Your Name"
                 onChange={handleChange}
                 value={user.username}
