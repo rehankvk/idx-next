@@ -21,7 +21,6 @@ export default function DetailProduct() {
     try {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
       const data = await response.json();
-      console.log(data);
       setProduct(data);
     } catch (error) {
       console.error(error);
@@ -52,8 +51,8 @@ export default function DetailProduct() {
               <Image
                 src={product.image}
                 alt={product.title}
-                width={128}
-                height={128}
+                width={200}
+                height={200}
                 className="object-contain"
               />
             </div>
@@ -89,7 +88,7 @@ export default function DetailProduct() {
                   ⭐{product.rating.rate} - {product.rating.count} in stock
                 </p>
               </div>
-              <p className="mt-3 text-gray-600">{product.description}</p>
+              <p className="mt-3 text-gray-600 line-clamp-5">{product.description}</p>
             </CardContent>
             <CardFooter className="flex justify-between items-center space-x-3">
               <div className="flex flex-row space-x-2 items-center">
